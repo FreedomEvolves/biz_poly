@@ -1,4 +1,4 @@
-<h2>Business Listing</h2>
+<h2>Business List</h2>
 <div class="well">
 <%= link_to "New Business", new_business_path, class: "btn btn-primary" %>
 </div>
@@ -21,7 +21,7 @@
       <% @businesses.each do |business| %>
         <tr>
           <td><%= link_to business.name, business %></td>
-          <td><%#= business.interactions.count %></td>
+          <td><%= business.interactions.count %></td>
           <td><%= link_to "Edit", edit_business_path(business), class: "btn btn-default" %></td>
           <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
         </tr>

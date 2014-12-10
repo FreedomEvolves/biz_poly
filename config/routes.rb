@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "people#index"
+
   resources :people do 
     resources :interactions, only: [:new, :create, :edit, :update]
   end
@@ -7,40 +9,37 @@ Rails.application.routes.draw do
     resources :interactions, only: [:new, :create, :edit, :update]
   end
 
-  root to: "people#index"
+  # get 'interactions/new'
 
-  
-  get 'interactions/new'
+  # get 'interactions/create'
 
-  get 'interactions/create'
+  # get 'interactions/edit'
 
-  get 'interactions/edit'
+  # get 'interactions/update'
 
-  get 'interactions/update'
+  # get 'businesses/index'
 
-  get 'businesses/index'
+  # get 'businesses/show'
 
-  get 'businesses/show'
+  # get 'businesses/new'
 
-  get 'businesses/new'
+  # get 'businesses/ceate'
 
-  get 'businesses/ceate'
+  # get 'businesses/edit'
 
-  get 'businesses/edit'
+  # get 'businesses/update'
 
-  get 'businesses/update'
+  # get 'people/index'
 
-  get 'people/index'
+  # get 'people/show'
 
-  get 'people/show'
+  # get 'people/new'
 
-  get 'people/new'
+  # get 'people/create'
 
-  get 'people/create'
+  # get 'people/edit'
 
-  get 'people/edit'
-
-  get 'people/update'
+  # get 'people/update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

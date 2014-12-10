@@ -1,10 +1,7 @@
 class InteractionsController < ApplicationController
   def new
-  	#@context = context
-  	#@interaction = @context.interactions.new(interaction_params)
-
-    person = Person.find(params[:person_id])
-    @interaction = person.interactions.build
+  	@context = context
+    @interaction = @data.interactions.build
   end
 
   def create
@@ -35,16 +32,14 @@ class InteractionsController < ApplicationController
 
 		def context
 			if params[:person_id]
-				Person.find(params[:person_id])
-        #id = params[:person_id]
+				@data = Person.find(params[:person_id])
 			else
-				Business.find(params[:business_id])
-        #id = params[:business_id]
+				@data = Business.find(params[:business_id])
 			end
 		end
 
 		def context_url(context)
-			if Person === context
+			if Person === context  #yep, three equal signs!
 				person_path(context)
 			else
 				business_path(context)
