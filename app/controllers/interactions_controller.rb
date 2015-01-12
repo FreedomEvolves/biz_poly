@@ -38,11 +38,8 @@ class InteractionsController < ApplicationController
 			end
 		end
 
-		def context_url(context)
-			if Person === context  #yep, three equal signs!
-				person_path(context)
-			else
-				business_path(context)
-			end
+		def context_url(context)  
+      Person === context ? person_path(context) : business_path(context)
+			#yep, three equal signs!
 		end
 end
